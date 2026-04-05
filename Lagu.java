@@ -10,8 +10,6 @@
  * ================================================
  */
  
-import java.util.Scanner;
- 
 // ============================================================
 // #1 CLASS Lagu
 //  Merepresentasikan sebuah lagu dengan enkapsulasi penuh.

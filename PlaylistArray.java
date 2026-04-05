@@ -48,10 +48,9 @@ public class PlaylistArray {
             System.out.println("Playlist kosong.");
             return;
         }
-        System.out.println("\n=== Daftar Lagu ===");
+        System.out.println("\nDaftar lagu saat ini:");
         for (int i = 0; i < jumlahLagu; i++) {
-            System.out.println("Lagu #" + (i + 1));
-            lagu[i].tampilkanInfo();
+            System.out.println((i + 1) + ". " + lagu[i].getJudul() + " - " + lagu[i].getArtis() + " (" + String.format("%.2f", lagu[i].getDurasi()) + " menit)");
         }
 
         // Tanyakan apakah user ingin mengurutkan
@@ -76,10 +75,9 @@ public class PlaylistArray {
         selectionSort(sorted);
 
         // Tampilkan urutan setelah sort
-        System.out.println("\n=== Daftar Lagu (Setelah Diurutkan berdasarkan Durasi Ascending) ===");
+        System.out.println("\nDaftar lagu setelah diurutkan berdasarkan durasi (ascending):");
         for (int i = 0; i < jumlahLagu; i++) {
-            System.out.println("Lagu #" + (i + 1));
-            sorted[i].tampilkanInfo();
+            System.out.println((i + 1) + ". " + sorted[i].getJudul() + " - " + sorted[i].getArtis() + " (" + String.format("%.2f", sorted[i].getDurasi()) + " menit)");
         }
     }
 
@@ -172,10 +170,9 @@ public class PlaylistArray {
         }
 
         // Tampilkan urutan sebelum sort
-        System.out.println("\n=== Daftar Lagu (Sebelum Pengurutan) ===");
+        System.out.println("\nDaftar lagu sebelum pengurutan:");
         for (int i = 0; i < jumlahLagu; i++) {
-            System.out.println("Lagu #" + (i + 1));
-            lagu[i].tampilkanInfo();
+            System.out.println((i + 1) + ". " + lagu[i].getJudul() + " - " + lagu[i].getArtis() + " (" + String.format("%.2f", lagu[i].getDurasi()) + " menit)");
         }
 
         // Salin array untuk sorting
@@ -188,10 +185,9 @@ public class PlaylistArray {
         selectionSort(sorted);
 
         // Tampilkan urutan setelah sort
-        System.out.println("\n=== Daftar Lagu (Setelah Pengurutan berdasarkan Durasi Ascending) ===");
+        System.out.println("\nDaftar lagu setelah pengurutan berdasarkan durasi (ascending):");
         for (int i = 0; i < jumlahLagu; i++) {
-            System.out.println("Lagu #" + (i + 1));
-            sorted[i].tampilkanInfo();
+            System.out.println((i + 1) + ". " + sorted[i].getJudul() + " - " + sorted[i].getArtis() + " (" + String.format("%.2f", sorted[i].getDurasi()) + " menit)");
         }
     }
 
