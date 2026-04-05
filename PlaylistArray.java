@@ -41,7 +41,6 @@ public class PlaylistArray {
 
     /**
      * TRAVERSAL: Menampilkan semua lagu di playlist
-     * Dengan opsi untuk sorting berdasarkan durasi
      */
     public void tampilkanSemuaLagu(Scanner input) {
         if (jumlahLagu == 0) {
@@ -52,35 +51,7 @@ public class PlaylistArray {
         for (int i = 0; i < jumlahLagu; i++) {
             System.out.println((i + 1) + ". " + lagu[i].getJudul() + " - " + lagu[i].getArtis() + " (" + String.format("%.2f", lagu[i].getDurasi()) + " menit)");
         }
-
-        // Tanyakan apakah user ingin mengurutkan
-        System.out.print("Apakah Anda ingin mengurutkan berdasarkan durasi (ascending)? (y/n): ");
-        String pilihan = input.nextLine().toLowerCase();
-        if (pilihan.equals("y") || pilihan.equals("yes")) {
-            tampilkanSemuaLaguDenganSorting();
-        }
     }
-
-    /**
-     * Menampilkan semua lagu dengan sorting berdasarkan durasi ascending
-     */
-    private void tampilkanSemuaLaguDenganSorting() {
-        // Salin array untuk sorting
-        Lagu[] sorted = new Lagu[jumlahLagu];
-        for (int i = 0; i < jumlahLagu; i++) {
-            sorted[i] = lagu[i];
-        }
-
-        // Selection Sort berdasarkan durasi
-        selectionSort(sorted);
-
-        // Tampilkan urutan setelah sort
-        System.out.println("\nDaftar lagu setelah diurutkan berdasarkan durasi (ascending):");
-        for (int i = 0; i < jumlahLagu; i++) {
-            System.out.println((i + 1) + ". " + sorted[i].getJudul() + " - " + sorted[i].getArtis() + " (" + String.format("%.2f", sorted[i].getDurasi()) + " menit)");
-        }
-    }
-
 
     /**
      * INSERTION: Menambahkan lagu baru ke playlist
@@ -249,7 +220,8 @@ public class PlaylistArray {
             System.out.println("2. Tambah lagu baru");
             System.out.println("3. Hapus lagu berdasarkan judul");
             System.out.println("4. Cari lagu berdasarkan judul");
-            System.out.println("5. Keluar");
+            System.out.println("5. Urutkan berdasarkan durasi");
+            System.out.println("6. Keluar");
             System.out.print("Pilihan: ");
             String pilihan = input.nextLine();
 
@@ -285,6 +257,10 @@ public class PlaylistArray {
                     break;
 
                 case "5":
+                    playlist.urutkanBerdasarkanDurasi();
+                    break;
+
+                case "6":
                     running = false;
                     System.out.println("Terima kasih! Program selesai.");
                     break;
